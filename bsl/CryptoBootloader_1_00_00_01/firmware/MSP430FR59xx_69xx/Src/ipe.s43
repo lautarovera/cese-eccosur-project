@@ -1,0 +1,71 @@
+/**************************************************
+ *
+ * Intellectual Property Encapsulation (IPE).
+ *
+ * Copyright 2014 IAR Systems AB.
+ *
+ * See the file 430/doc/licenses/IARSourceLicense.txt for detailed
+ * license information.
+ *
+ * $Revision: 10460 $
+ *
+ **************************************************/
+#include "macros.m43"
+#include "cfi.m43"
+
+#define ipe_border1 (SFB(IPE_B1) >> 4)
+#define ipe_border2 (SFE(IPE_B2) >> 4)
+
+        MODULE  ?IpeInit
+        EXTERN  __iar_430_MPUIPC0_value
+        RSEG    IPE_B2
+
+// ----------------------------------------
+// The IPE signature.
+//
+// This should be included when the IPE is enabled.
+//
+
+        COMMON  IPESIGNATURE:CONST:NOROOT(1)
+        PUBLIC  __iar_430_ipe_signature
+
+__iar_430_ipe_signature:
+        // IPE Signature
+        DC16    0xAAAA
+        DC16    (?ipe_struct >> 4)
+
+
+// ----------------------------------------
+// The start of the IPE memory area.
+//
+// Align to multiple of 0x0400 = (2 << 10).
+//
+// This is included by code and constant data placed in IPE memory.
+
+        RSEG    IPE_B1:CONST:NOROOT(10)
+        REQUIRE ?ipe_end
+
+        // The struct must be aligned at a multiple of 16. However,
+        // the IPE_B1 segment is aligned at a multiple of 0x400, so
+        // this is fulfilled.
+?ipe_struct:
+        DC16    __iar_430_MPUIPC0_value
+        DC16    ipe_border2
+        DC16    ipe_border1
+        DC16    ~(  __iar_430_MPUIPC0_value \
+                  ^ ipe_border2             \
+                  ^ ipe_border1)
+
+
+// ----------------------------------------
+// The end of the IPE memory area.
+//
+// Align to multiple of 0x0400 = (2 << 10).
+//
+
+        RSEG    IPE_B2:CONST:NOROOT(10)
+?ipe_end:
+
+        ENDMOD
+
+        END

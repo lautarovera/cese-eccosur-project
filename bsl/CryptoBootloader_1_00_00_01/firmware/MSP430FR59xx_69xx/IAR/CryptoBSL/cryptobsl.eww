@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\cryptobsl.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build_all</name>
+      <member>
+        <project>cryptobsl</project>
+        <configuration>FR5969_Crypto</configuration>
+      </member>
+      <member>
+        <project>cryptobsl</project>
+        <configuration>FR5969_StandardwCrypto</configuration>
+      </member>
+      <member>
+        <project>cryptobsl</project>
+        <configuration>FR6989_Crypto</configuration>
+      </member>
+      <member>
+        <project>cryptobsl</project>
+        <configuration>FR6989_StandardwCrypto</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

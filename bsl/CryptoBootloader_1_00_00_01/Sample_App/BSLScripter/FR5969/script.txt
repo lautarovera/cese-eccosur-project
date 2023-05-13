@@ -1,0 +1,10 @@
+// Script used to download Sample application to FR5969
+// LED should toggle in P1.0
+// Pulling P1.1 low will force device to jump to bootloader
+// Copy BSL Scripter to this folder and call the following command
+// > BSL-Scripter.exe script.txt
+MODE Crypto FRxx UART COM19
+TX_BSL_VERSION
+// Write Application with protected command
+RX_SECURE_DATA_BLOCK App_Example_Prot_DKey0_Ver1.txt
+REBOOT_RESET

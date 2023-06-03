@@ -208,6 +208,27 @@
     #define UCZNTXBUF           UCA0TXBUF
     #define UCZNRXBUF           UCA0RXBUF
     #define UCZNIFG             UCA0IFG
+#elif (UART_USCI_BASE == EUSCI_A3_BASE)
+    // UART Pin configuration
+    #define UART_PORT_SEL1      P6SEL1              
+    #define UART_PORT_SEL0      P6SEL0              
+    #define UART_PORT_DIR       P6DIR1
+    #define UART_TX             BIT0                // TX on P6.0 - UCA3TXD
+    #define UART_RX             BIT1                // RX on P6.1 - UCA3RXD
+#ifdef __MSP430FR5994__
+    #define UART_PORT_CONFIG()   {UART_PORT_SEL1 &= ~(UART_TX | UART_RX);\
+                                 UART_PORT_SEL0 |= (UART_TX | UART_RX);}
+#else
+    #error "Configuration not defined"
+#endif
+    // UART Registers
+    #define UART_UCZNCTLW0      UCA3CTLW0
+    #define UART_UCZNBRW        UCA3BRW
+    #define UART_UCZNMCTLW      UCA3MCTLW
+    #define UART_UCZNMCTLW_H    UCA3MCTLW_H
+    #define UCZNTXBUF           UCA3TXBUF
+    #define UCZNRXBUF           UCA3RXBUF
+    #define UCZNIFG             UCA3IFG
 #else
 #error "Define Peripheral configuration"
 #endif

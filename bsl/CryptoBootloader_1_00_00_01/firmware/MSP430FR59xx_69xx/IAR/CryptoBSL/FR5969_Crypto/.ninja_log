@@ -1,0 +1,13 @@
+# ninja log v5
+3	112	7075132491882189	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/MSP430FR59xx_69xx/ipe.r43	e331ea7d0c4f9bf6
+0	134	7075132492080429	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/API/BSL430_API_MassErase.r43	d3f3fd57fe4c6f41
+15	177	7075132492493033	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/mode/aes_ccm.r43	84d173a7c8f295e2
+6	196	7075132492430482	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/cipher/aes_hw.r43	1dd4fc8152017cf1
+113	211	7075132492815966	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/mac/cbc_mac.r43	da13aed7ce760f5
+179	264	7075132493343411	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/mode/ctr.r43	de700a445e169d9e
+198	279	7075132493506077	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/utils/utils.r43	aebb0558dfc47960
+135	285	7075132493566077	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Crypto/BSL430_Crypto.r43	c6a6a496a450b3ae
+12	314	7075132493875747	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Command_Interpreter/BSL430_Command_Interpreter.r43	d47ad489e1110c9e
+9	356	7075132494272541	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/API/BSL430_API_FRAM_CRYPTO.r43	c8fe628b278060e2
+213	411	7075132494839435	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Obj/CryptoBSL/Peripheral_Interface/eUSCI_UART_I2C/BSL430_PI_eUSCI_UART_I2C.r43	ba261a4fa57d3019
+413	584	7075132496501441	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/firmware/MSP430FR59xx_69xx/IAR/CryptoBSL/FR5969_Crypto/Exe/cryptobsl.d43	48585c4480f533dc

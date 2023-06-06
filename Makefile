@@ -1,9 +1,9 @@
 ifndef $(MSPGCCDIR)
-	MSPGCCDIR = /opt/msp430-gcc-9.3.1.11_linux64
+	MSPGCCDIR = /root/ti/msp430-gcc
 endif
 
 # Paths
-INCLUDES_DIRECTORY = /opt/msp430-gcc-support-files-1.212/msp430-gcc-support-files/include
+INCLUDES_DIRECTORY = $(MSPGCCDIR)/include
 SRC_DIR = ./src
 # Device
 DEVICE = msp430fr5994

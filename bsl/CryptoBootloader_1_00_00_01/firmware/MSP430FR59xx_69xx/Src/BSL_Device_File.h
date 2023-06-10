@@ -108,7 +108,7 @@
 /*! Disable the factory BSL (1: Disable, x: Enable) */
 #define DISABLE_FACTORY_BSL     1
 /*! Define base address of USCI used by UART */
-#define UART_USCI_BASE          EUSCI_A0_BASE
+#define UART_USCI_BASE          EUSCI_A3_BASE
 /*! Define base address of USCI used by I2C */
 #define I2C_USCI_BASE           EUSCI_B0_BASE
 /*! MPU access after reset:
@@ -138,11 +138,15 @@
 #define INTERRUPT_VECTOR_START  0xFFC0
 #define INTERRUPT_VECTOR_END    0xFFFD  // Don't include reset vector
 #define SECURE_RAM_START        0x1C00
-#define MAIN_MEM_START          0x4400
 #ifdef __MSP430FR5969__
+#define MAIN_MEM_START          0x4400
 #define MAIN_MEM_END            0x14000
 #elif defined __MSP430FR6989__
+#define MAIN_MEM_START          0x4400
 #define MAIN_MEM_END            0x24000
+#elif defined __MSP430FR5994__
+#define MAIN_MEM_START          0x4000
+#define MAIN_MEM_END            0x44000
 #else
     #error "Configuration not defined"
 #endif
@@ -251,23 +255,23 @@
 
 // Commands supported when using CryptoBootloader
 #if (CRYPTO_COMMANDS != 0)
-#   define SUPPORTS_REBOOT_RESET
-#   define SUPPORTS_RX_PROT_DATA_BLOCK
-#   define SUPPORTS_RX_ENC_KEY
-#   define SUPPORTS_MASS_ERASE
-#   define SUPPORTS_TX_BSL_VERSION
+    #define SUPPORTS_REBOOT_RESET
+    #define SUPPORTS_RX_PROT_DATA_BLOCK
+    #define SUPPORTS_RX_ENC_KEY
+    #define SUPPORTS_MASS_ERASE
+    #define SUPPORTS_TX_BSL_VERSION
 #endif
 
 // Standard Commands supported by the device
 #if (FULL_STANDARD_COMMANDS != 0)
-#   define SUPPORTS_MASS_ERASE
-#   define SUPPORTS_TX_BSL_VERSION
-#   define SUPPORTS_RX_DATA_BLOCK_FAST
-#   define SUPPORTS_RX_PASSWORD
-#   define SUPPORTS_LOAD_PC
-#   define SUPPORTS_RX_DATA_BLOCK
-#   define SUPPORTS_CRC_CHECK
-#   define SUPPORTS_TX_DATA_BLOCK
+    #define SUPPORTS_MASS_ERASE
+    #define SUPPORTS_TX_BSL_VERSION
+    #define SUPPORTS_RX_DATA_BLOCK_FAST
+    #define SUPPORTS_RX_PASSWORD
+    #define SUPPORTS_LOAD_PC
+    #define SUPPORTS_RX_DATA_BLOCK
+    #define SUPPORTS_CRC_CHECK
+    #define SUPPORTS_TX_DATA_BLOCK
 #endif
 
 #endif // __BSL_DEVICE_FILE_H

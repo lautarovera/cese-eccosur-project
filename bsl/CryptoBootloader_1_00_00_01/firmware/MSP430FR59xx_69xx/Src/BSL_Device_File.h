@@ -169,6 +169,9 @@
 #elif defined __MSP430FR6989__
     #define I2C_PORT_CONFIG()   {I2C_PORT_SEL0 |= (SDA + SCL);\
                                  I2C_PORT_SEL1 &= ~(SDA + SCL);}
+#elif defined __MSP430FR5994__
+    #define I2C_PORT_CONFIG()   {I2C_PORT_SEL0 |= (SDA + SCL);\
+                                 I2C_PORT_SEL1 &= ~(SDA + SCL);}
 #else
     #error "Configuration not defined"
 #endif

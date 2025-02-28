@@ -92,10 +92,25 @@
  *            |                  |
  *            |                  |
  *            |                  |
-* Author: Luis Reynoso
+* Author: Lautaro Vera
  ******************************************************************************/
 
-#include "msp430.h"
+#include <msp430.h>
+#include <stdio.h>
+
+int putchar(int c) {
+    while (!(UCA0IFG & UCTXIFG));  // Wait until buffer is ready
+    UCA0TXBUF = c;                 // Transmit character
+    return c;
+}
+
+int _write(int file, char *ptr, int len) {
+    int i;
+    for (i = 0; i < len; i++) {
+        putchar(ptr[i]);
+    }
+    return len;
+}
 
 void UART_init(void)
 {
@@ -107,12 +122,12 @@ void UART_init(void)
     UCA0CTLW0 = UCSWRST;                    // Put eUSCI in reset
     UCA0CTLW0 |= UCSSEL__SMCLK;             // CLK = SMCLK
     // Baud Rate calculation
-    // 8000000/(16*9600) = 52.083
-    // Fractional portion = 0.083
-    // User's Guide Table 21-4: UCBRSx = 0x04
-    // UCBRFx = int ( (52.083-52)*16) = 1
-    UCA0BRW = 52;                           // 8000000/16/9600
-    UCA0MCTLW |= UCOS16 | UCBRF_1 | 0x4900;
+    // 16000000/(16*9600) = 104.166
+    // Fractional portion = 0.166
+    // User's Guide Table 21-4: UCBRSx = 0x11
+    // UCBRFx = int ( (104.166-104)*16) = 2
+    UCA0BRW = 104;                           // 16000000/16/9600
+    UCA0MCTLW |= UCOS16 | UCBRF_2 | 0x1100;
     UCA0CTLW0 &= ~UCSWRST;                  // Initialize eUSCI
 }
 
@@ -121,9 +136,9 @@ void app_uart(void)
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 
-    // Startup clock system with max DCO setting ~8MHz
+    // Startup clock system with max DCO setting ~16MHz
     CSCTL0_H = CSKEY_H;                     // Unlock CS registers
-    CSCTL1 = DCOFSEL_3 | DCORSEL;           // Set DCO to 8MHz
+    CSCTL1 = DCOFSEL_4 | DCORSEL;           // Set DCO to 16MHz
     CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
     CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
     CSCTL0_H = 0;                           // Lock CS registers
@@ -132,17 +147,7 @@ void app_uart(void)
 
     while(1)
     {
-        volatile unsigned int i = 10000u;
-        int j = 0u;
-
-        char *str = "Hello World\r\n";
-
-        do {
-            UCA0TXBUF = str[j];
-            j++;
-            do i--;
-            while(i != 0u);
-        } while(str[j] != '\0');
+        printf("Hello, MSP430 UART!\n");
     }
 }
 

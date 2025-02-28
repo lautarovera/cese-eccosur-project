@@ -1,7 +1,17 @@
 C:\Users\Lautaro\cese-eccosur-project\bsl\CryptoBootloader_1_00_00_01\Sample_App\FR5994\BrowseInfo\main.pbi: \
-  C:\Users\Lautaro\cese-eccosur-project\bsl\CryptoBootloader_1_00_00_01\Sample_App\main.c \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\msp430.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\msp430fr5994.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\in430.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\ystdio.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\ysizet.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\DLib_Threads.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\xencoding_limits.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\lib\dlib\dl430xlsfn.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\dlib\c\stdio.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\legacy.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\intrinsics.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\legacy.h
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\in430.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\msp430fr5994.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\430\inc\msp430.h \
+  C:\Users\Lautaro\cese-eccosur-project\bsl\CryptoBootloader_1_00_00_01\Sample_App\main.c

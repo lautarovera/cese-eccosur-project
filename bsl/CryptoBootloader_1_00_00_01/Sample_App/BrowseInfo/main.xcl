@@ -253,7 +253,7 @@ C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\inc\dlib\c
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
--D__MSP430FR5969__=1
+-D__MSP430FR6989__=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlsfn.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.1\\430\\lib\\dlib\\dl430xlsfn.h"
 -D__VERSION__="IAR C/C++ Compiler V8.10.2.1069/W32 for MSP430"

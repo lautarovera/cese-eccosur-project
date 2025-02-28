@@ -88,7 +88,7 @@
  *      CONFIG_ENTRY_GPIO: Use a GPIO (P1.1)
  *      CONFIG_ENTRY_STANDARD: Use the standard BSL entry sequence (default BSL must be disabled)
  */
-#define DEFAULT_ENTRY_SEQUENCE  CONFIG_ENTRY_STANDARD
+#define DEFAULT_ENTRY_SEQUENCE  CONFIG_ENTRY_GPIO
 /*! Define the default state of standard commands
  *      CONFIG_STDCMDS_ENABLED: Enable Standard commands
  *      CONFIG_STDCMDS_DISABLED: Disable Standard commands
@@ -146,7 +146,7 @@
 #define MAIN_MEM_END            0x24000
 #elif defined __MSP430FR5994__
 #define MAIN_MEM_START          0x4000
-#define MAIN_MEM_END            0x44000
+#define MAIN_MEM_END            0x43FF7
 #else
     #error "Configuration not defined"
 #endif

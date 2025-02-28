@@ -296,7 +296,7 @@ C:\Users\Lautaro\cese-eccosur-project\bsl\CryptoBootloader_1_00_00_01\firmware\C
 -DFULL_STANDARD_COMMANDS=1
 -DCRYPTO_COMMANDS=1
 -DNDEBUG=1
--D__MSP430FR5969__=1
+-D__MSP430FR5994__=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlsfn.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.1\\430\\lib\\dlib\\dl430xlsfn.h"
 -D__VERSION__="IAR C/C++ Compiler V8.10.2.1069/W32 for MSP430"

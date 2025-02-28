@@ -97,9 +97,27 @@
 
 #include "msp430.h"
 
-int main( void )
+void app_blinky(void)
 {
-    // Stop watchdog timer to prevent time out reset
+    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+                                            // to activate previously configured port settings
+    P1DIR |= 0x01;                          // Set P1.0 to output direction
+
+    for(;;) {
+        volatile unsigned int i;            // volatile to prevent optimization
+
+        P1OUT ^= 0x01;                      // Toggle P1.0 using exclusive-OR
+
+        i = 10000;                          // SW Delay
+        do i--;
+        while(i != 0);
+    }
+}
+
+void app_bsl(void)
+{
+  // Stop watchdog timer to prevent time out reset
     WDTCTL = WDTPW + WDTHOLD;
   
     // P1.0 is output low by default
@@ -137,6 +155,11 @@ int main( void )
    }
 }
 
+int main( void )
+{
+    app_blinky();
+}
+
 
 //
 // Interrupt Service Routines
@@ -145,30 +168,30 @@ int main( void )
 //
 
 // Timer0_A0 interrupt service routine
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = TIMER0_A0_VECTOR
-__interrupt void Timer0_A0_ISR (void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer0_A0_ISR (void)
-#else
-#error Compiler not supported!
-#endif
-{
-    P1OUT ^= BIT0;  // toggle P1.0 
-}
-
-// Port 1 interrupt service routine
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector=PORT1_VECTOR
-__interrupt void Port_1(void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(PORT1_VECTOR))) Port_1 (void)
-#else
-#error Compiler not supported!
-#endif
-{
-    P1IFG &= ~BIT1;                           // Clear P1.1 IFG
-    // Jump to CryptoBSL
-    __disable_interrupt();
-    ((void (*)())0xFF08)(0xC0DE);	// Jump to CryptoBSL
-}
+//#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+//#pragma vector = TIMER0_A0_VECTOR
+//__interrupt void Timer0_A0_ISR (void)
+//#elif defined(__GNUC__)
+//void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer0_A0_ISR (void)
+//#else
+//#error Compiler not supported!
+//#endif
+//{
+//    P1OUT ^= BIT0;  // toggle P1.0 
+//}
+//
+//// Port 1 interrupt service routine
+//#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+//#pragma vector=PORT1_VECTOR
+//__interrupt void Port_1(void)
+//#elif defined(__GNUC__)
+//void __attribute__ ((interrupt(PORT1_VECTOR))) Port_1 (void)
+//#else
+//#error Compiler not supported!
+//#endif
+//{
+//    P1IFG &= ~BIT1;                           // Clear P1.1 IFG
+//    // Jump to CryptoBSL
+//    __disable_interrupt();
+//    ((void (*)())0xFF08)(0xC0DE);	// Jump to CryptoBSL
+//}

@@ -9,9 +9,9 @@
 // Signature memory:               16 Bytes
 // Peripheral units:                   0-00FFF
 // Information memory (FRAM):      01800-019FF
-// Read/write memory (RAM):        01C00-023FF
-// Persistent memory (FRAM):       04400-0FFFF
-//                                 10000-13FFF
+// Read/write memory (RAM):        01C00-02BFF
+// Persistent memory (FRAM):       04000-0FF7F
+//                                 10000-43FF7
 
 // ---------------------------------------------------------
 // Configuration
@@ -29,7 +29,7 @@
 // Stack and heap sizes
 //
 // Uncomment for command line use
--D_STACK_SIZE=160
+-D_STACK_SIZE=100
 -D_DATA16_HEAP_SIZE=0
 -D_DATA20_HEAP_SIZE=0
 //-g?mpu2_init
@@ -158,7 +158,7 @@
 -Z(CONST)JTAGLOCK_KEY=FF80-FF83
 
 // IPE Signatures
--Z(CONST)IPESIGNATURE=FF88-FF8B
+-Z(CONST)IPESIGNATURE=FF88-FF8F
 
 // Interrupt vectors
 -Z(CODE)INTVEC=FF90-FFFF

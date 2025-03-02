@@ -149,6 +149,10 @@ void app_uart(void)
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 
+    P3DIR |= BIT4;   // Set P3.4 as output
+    P3SEL1 |= BIT4;  // Select SMCLK function
+    P3SEL0 |= BIT4;
+
     CLK_Init();
     UART_init();
 

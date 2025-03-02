@@ -112,6 +112,18 @@ int _write(int file, char *ptr, int len) {
     return len;
 }
 
+void CLK_Init(void)
+{
+    // Startup clock system with max DCO setting ~16MHz
+    CSCTL0_H = CSKEY_H;                     // Unlock CS registers
+    CSCTL1 = DCOFSEL_3 | DCORSEL;           // Set DCO to 16MHz
+    CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
+    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
+    CSCTL0_H = 0;                           // Lock CS registers
+
+    __delay_cycles(10000);  // Wait for clock set
+}
+
 void UART_init(void)
 {
     // Configure GPIO
@@ -126,8 +138,8 @@ void UART_init(void)
     // Fractional portion = 0.166
     // User's Guide Table 21-4: UCBRSx = 0x11
     // UCBRFx = int ( (104.166-104)*16) = 2
-    UCA0BRW = 104;                           // 16000000/16/9600
-    UCA0MCTLW |= UCOS16 | UCBRF_2 | 0x1100;
+    UCA0BRW = 8;                           // 16000000/16/9600
+    UCA0MCTLW = UCBRF_0 | 0xD600;
     UCA0CTLW0 &= ~UCSWRST;                  // Initialize eUSCI
 }
 
@@ -136,18 +148,12 @@ void app_uart(void)
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 
-    // Startup clock system with max DCO setting ~16MHz
-    CSCTL0_H = CSKEY_H;                     // Unlock CS registers
-    CSCTL1 = DCOFSEL_4 | DCORSEL;           // Set DCO to 16MHz
-    CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
-    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
-    CSCTL0_H = 0;                           // Lock CS registers
-
+    //CLK_Init();
     UART_init();
 
     while(1)
     {
-        printf("Hello, MSP430 UART!\n");
+        printf("Hello, MSP430 UART!\n\r");
     }
 }
 
@@ -155,6 +161,8 @@ void app_blinky(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+
+    CLK_Init();
                                             // to activate previously configured port settings
     P1DIR |= 0x01;                          // Set P1.0 to output direction
 
@@ -171,8 +179,10 @@ void app_blinky(void)
 
 void app_bsl(void)
 {
-  // Stop watchdog timer to prevent time out reset
-    WDTCTL = WDTPW + WDTHOLD;
+    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+
+    CLK_Init();
 
     // P1.0 is output low by default
     P1OUT &= ~BIT0;
@@ -185,18 +195,6 @@ void app_bsl(void)
     P1IES |= BIT1;
     P1IFG = 0;
     P1IE |= BIT1;
-
-
-    // Configure clocks
-    CSCTL0_H = CSKEY >> 8;                    // Unlock CS registers
-    CSCTL1 = DCOFSEL_6;                       // Set DCO = 8MHz
-    CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;// Set ACLK=VLO SMCLK=DCO
-    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;     // Set all dividers
-    CSCTL0_H = 0;                             // Lock CS registers
-
-    // Disable the GPIO power-on default high-impedance mode to activate
-    // previously configured port settings
-    PM5CTL0 &= ~LOCKLPM5;
 
     TA0CCTL0 = CCIE;                          // TACCR0 interrupt enabled
     TA0CCR0 = 4000;

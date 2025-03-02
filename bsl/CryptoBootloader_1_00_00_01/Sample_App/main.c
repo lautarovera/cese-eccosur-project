@@ -166,19 +166,19 @@ void app_timer(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop WDT
 
-    // Configure GPIO
+    // P1.0 is output low by default
+    P1OUT &= ~BIT0;
     P1DIR |= BIT0;
-    P1OUT |= BIT0;
 
     // Disable the GPIO power-on default high-impedance mode to activate
     // previously configured port settings
     PM5CTL0 &= ~LOCKLPM5;
 
     TA0CCTL0 = CCIE;                        // TACCR0 interrupt enabled
-    TA0CCR0 = 50000;
-    TA0CTL = TASSEL__SMCLK | MC__CONTINOUS; // SMCLK, continuous mode
+    TA0CCR0 = 2000;
+    TA0CTL = TASSEL__ACLK | MC__UP;         // ACKL, UP mode
 
-    __bis_SR_register(LPM0_bits | GIE);     // Enter LPM0 w/ interrupt
+    __bis_SR_register(GIE);     // Enter LPM0 w/ interrupt
     __no_operation();                       // For debugger
 }
 
@@ -234,7 +234,12 @@ void app_bsl(void)
 
 int main( void )
 {
+    CLK_Init();
+    UART_init();
+
     app_timer();
+
+    app_uart();
 }
 
 
@@ -254,8 +259,7 @@ void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer0_A0_ISR (void)
 #error Compiler not supported!
 #endif
 {
-    P1OUT ^= BIT0;
-    TA0CCR0 += 50000;                       // Add Offset to TA0CCR0
+    P1OUT ^= BIT0;  // toggle P1.0
 }
 
 // Port 1 interrupt service routine

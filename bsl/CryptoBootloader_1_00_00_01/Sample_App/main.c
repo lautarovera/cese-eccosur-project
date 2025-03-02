@@ -146,9 +146,6 @@ void UART_init(void)
 
 void app_uart(void)
 {
-    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-
     P3DIR |= BIT4;   // Set P3.4 as output
     P3SEL1 |= BIT4;  // Select SMCLK function
     P3SEL0 |= BIT4;
@@ -164,8 +161,6 @@ void app_uart(void)
 
 void app_timer(void)
 {
-    WDTCTL = WDTPW | WDTHOLD;               // Stop WDT
-
     // P1.0 is output low by default
     P1OUT &= ~BIT0;
     P1DIR |= BIT0;
@@ -184,11 +179,6 @@ void app_timer(void)
 
 void app_blinky(void)
 {
-    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-
-    CLK_Init();
-                                            // to activate previously configured port settings
     P1DIR |= 0x01;                          // Set P1.0 to output direction
 
     for(;;) {
@@ -204,22 +194,17 @@ void app_blinky(void)
 
 void app_bsl(void)
 {
-    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-
-    CLK_Init();
-
     // P1.0 is output low by default
     P1OUT &= ~BIT0;
     P1DIR |= BIT0;
 
-    // P1.1 with internal pull-up and Hi-Low edge interrupt enabled
-    P1OUT |= BIT1;
-    P1REN |= BIT1;
+    // P1.3 with internal pull-up and Hi-Low edge interrupt enabled
+    P1OUT |= BIT3;
+    P1REN |= BIT3;
     __delay_cycles(10000);  // Wait for pull-up
-    P1IES |= BIT1;
+    P1IES |= BIT3;
     P1IFG = 0;
-    P1IE |= BIT1;
+    P1IE |= BIT3;
 
     TA0CCTL0 = CCIE;                          // TACCR0 interrupt enabled
     TA0CCR0 = 4000;
@@ -234,12 +219,15 @@ void app_bsl(void)
 
 int main( void )
 {
+    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+
     CLK_Init();
     UART_init();
 
-    app_timer();
+    //app_timer();
 
-    app_uart();
+    app_bsl();
 }
 
 
@@ -272,8 +260,9 @@ void __attribute__ ((interrupt(PORT1_VECTOR))) Port_1 (void)
 #error Compiler not supported!
 #endif
 {
-    P1IFG &= ~BIT1;                           // Clear P1.1 IFG
+    P1IFG &= ~BIT3;                           // Clear P1.1 IFG
+    printf("P1.3 ISR!\n\r");
     // Jump to CryptoBSL
-    __disable_interrupt();
-    ((void (*)())0xFF08)(0xC0DE);	// Jump to CryptoBSL
+//    __disable_interrupt();
+//    ((void (*)())0xFF08)(0xC0DE);	// Jump to CryptoBSL
 }

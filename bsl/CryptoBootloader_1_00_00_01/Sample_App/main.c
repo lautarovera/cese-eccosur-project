@@ -114,9 +114,9 @@ int _write(int file, char *ptr, int len) {
 
 void CLK_Init(void)
 {
-    // Startup clock system with max DCO setting ~16MHz
+    // Startup clock system with max DCO setting ~8MHz
     CSCTL0_H = CSKEY_H;                     // Unlock CS registers
-    CSCTL1 = DCOFSEL_3 | DCORSEL;           // Set DCO to 16MHz
+    CSCTL1 = DCOFSEL_3 | DCORSEL;           // Set DCO to 8MHz
     CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
     CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
     CSCTL0_H = 0;                           // Lock CS registers
@@ -134,12 +134,13 @@ void UART_init(void)
     UCA0CTLW0 = UCSWRST;                    // Put eUSCI in reset
     UCA0CTLW0 |= UCSSEL__SMCLK;             // CLK = SMCLK
     // Baud Rate calculation
-    // 16000000/(16*9600) = 104.166
+    // UCBR = 8000000/1000000 = 8
+    // UCOS16 = 0 (UCBR < 16)
     // Fractional portion = 0.166
-    // User's Guide Table 21-4: UCBRSx = 0x11
-    // UCBRFx = int ( (104.166-104)*16) = 2
-    UCA0BRW = 8;                           // 16000000/16/9600
-    UCA0MCTLW = UCBRF_0 | 0xD600;
+    // User's Guide Table 21-4: UCBRSx = 0x00
+    // UCBRFx = int ( (8-8)*16) = 0
+    UCA0BRW = 8;
+    UCA0MCTLW = UCBRF_0 | 0x0000;
     UCA0CTLW0 &= ~UCSWRST;                  // Initialize eUSCI
 }
 
@@ -148,7 +149,7 @@ void app_uart(void)
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 
-    //CLK_Init();
+    CLK_Init();
     UART_init();
 
     while(1)

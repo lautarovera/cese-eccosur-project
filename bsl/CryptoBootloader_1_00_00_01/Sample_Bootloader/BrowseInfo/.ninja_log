@@ -1,0 +1,12 @@
+# ninja log v5
+1	186	7635590290000000	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/main.xcl	e9bd1de5ce9003a6
+186	216	7635590295969240	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/main.pbi	a3f4f150260e200d
+217	229	7635590296109251	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbd	96cc83e5218774a
+230	451	7635590298222161	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbw	463baf4e26133ffa
+1	72	7635593080000000	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/main.xcl	64ffebc695cf8dd8
+74	250	7635593090323741	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/main.pbi	a3f4f150260e200d
+251	328	7635593091107275	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbd	96cc83e5218774a
+329	1340	7635593101007416	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbw	463baf4e26133ffa
+17	130	7638271632779019	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/main.pbi	a3f4f150260e200d
+132	206	7638271633539166	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbd	96cc83e5218774a
+207	1010	7638271641414367	C:/Users/Lautaro/cese-eccosur-project/bsl/CryptoBootloader_1_00_00_01/Sample_Bootloader/BrowseInfo/Sample_Bootloader.pbw	463baf4e26133ffa

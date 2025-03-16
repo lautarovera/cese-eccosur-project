@@ -16,10 +16,10 @@
 // ---------------------------------------------------------
 // Configuration
 //
-// For HW AES 
--DBSL_Limit_L=F000
-// For SW AES 
-//-DBSL_Limit_L=E000
+// For HW AES
+//-DBSL_Limit_L=F000
+// For SW AES
+-DBSL_Limit_L=E000
 -DBSL_Limit_H=FFFF
 -DBSL_SignVectors=FF80
 

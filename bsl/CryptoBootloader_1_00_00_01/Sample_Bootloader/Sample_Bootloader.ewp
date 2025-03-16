@@ -92,7 +92,7 @@
                 </option>
                 <option>
                     <name>GStackHeapOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GStackSize2</name>
@@ -112,7 +112,7 @@
                 </option>
                 <option>
                     <name>RadioHeapSizeType</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>RadioHardwareMultiplierType</name>
@@ -192,7 +192,7 @@
                 </option>
                 <option>
                     <name>GLockIpe</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>Math variant</name>
@@ -420,7 +420,7 @@
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
@@ -700,7 +700,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
+                <hasPrio>96</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>

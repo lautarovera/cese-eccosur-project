@@ -218,47 +218,47 @@ void main(void)
     BSL430_Crypto_sec_init();       // Initial security checks/functions
 
 /** TEST **/
-//    PI_init();                      // UART/I2C initialization
+    PI_init();                      // UART/I2C initialization
 
-    P3DIR |= BIT4;   // Set P3.4 as output
-    P3SEL1 |= BIT4;  // Select SMCLK function
-    P3SEL0 |= BIT4;
-
-    // Startup clock system with max DCO setting ~8MHz
-    CSCTL0_H = CSKEY_H;                     // Unlock CS registers
-    CSCTL1 = DCOFSEL_6;           // Set DCO to 8MHz
-    CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
-    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
-    CSCTL0_H = 0;                           // Lock CS registers
-
-    __delay_cycles(10000);  // Wait for clock set
-
-    // Configure GPIO
-    P2SEL1 |= BIT0 + BIT1;              //Activate Pin for UART use
-    P2SEL0 &= ~BIT0 + ~BIT1;            //Activate Pin for UART use
-
-    // Configure USCI_A0 for UART mode
-    UCA0CTLW0 = UCSWRST;                    // Put eUSCI in reset
-    UCA0CTLW0 |= UCSSEL__SMCLK;             // CLK = SMCLK
-    // Baud Rate calculation
-    // UCBR = 8000000/1000000 = 8
-    // UCOS16 = 0 (UCBR < 16)
-    // Fractional portion = 0.166
-    // User's Guide Table 21-4: UCBRSx = 0x00
-    // UCBRFx = int ( (8-8)*16) = 0
-    UCA0BRW = 8;
-    UCA0MCTLW = UCBRF_0 | 0x0000;
-    UCA0CTLW0 &= ~UCSWRST;                  // Initialize eUSCI
+//    P3DIR |= BIT4;   // Set P3.4 as output
+//    P3SEL1 |= BIT4;  // Select SMCLK function
+//    P3SEL0 |= BIT4;
+//
+//    // Startup clock system with max DCO setting ~8MHz
+//    CSCTL0_H = CSKEY_H;                     // Unlock CS registers
+//    CSCTL1 = DCOFSEL_6;           // Set DCO to 8MHz
+//    CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
+//    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;   // Set all dividers
+//    CSCTL0_H = 0;                           // Lock CS registers
+//
+//    __delay_cycles(10000);  // Wait for clock set
+//
+//    // Configure GPIO
+//    P2SEL1 |= BIT0 + BIT1;              //Activate Pin for UART use
+//    P2SEL0 &= ~BIT0 + ~BIT1;            //Activate Pin for UART use
+//
+//    // Configure USCI_A0 for UART mode
+//    UCA0CTLW0 = UCSWRST;                    // Put eUSCI in reset
+//    UCA0CTLW0 |= UCSSEL__SMCLK;             // CLK = SMCLK
+//    // Baud Rate calculation
+//    // UCBR = 8000000/1000000 = 8
+//    // UCOS16 = 0 (UCBR < 16)
+//    // Fractional portion = 0.166
+//    // User's Guide Table 21-4: UCBRSx = 0x00
+//    // UCBRFx = int ( (8-8)*16) = 0
+//    UCA0BRW = 8;
+//    UCA0MCTLW = UCBRF_0 | 0x0000;
+//    UCA0CTLW0 &= ~UCSWRST;                  // Initialize eUSCI
 /** TEST **/
 
     while(1)
     {
-//        eventFlags = PI_receivePacket();
-//        if (eventFlags & DATA_RECEIVED)
-//        {
-//            interpretCommand();
-//        }
-        printf("Hello, Sample Bootloader here!\n\r");
+        eventFlags = PI_receivePacket();
+        if (eventFlags & DATA_RECEIVED)
+        {
+            interpretCommand();
+        }
+//        printf("Hello, Sample Bootloader here!\n\r");
     }
 }
 

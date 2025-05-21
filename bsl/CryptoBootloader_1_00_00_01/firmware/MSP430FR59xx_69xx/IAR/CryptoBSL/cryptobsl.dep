@@ -5,90 +5,27 @@
     <configuration>
         <name>FR5969_Crypto</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes_hw.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.c</file>
-            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mac\cbc_mac.r43</file>
-            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mode\ctr.r43</file>
             <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\BSL430_Crypto.r43</file>
+            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mode\ctr.r43</file>
+            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mac\cbc_mac.r43</file>
             <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\API\BSL430_API_FRAM_CRYPTO.r43</file>
-            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\utils\utils.r43</file>
-            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mode\aes_ccm.r43</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes_hw.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</file>
             <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.r43</file>
+            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\mode\aes_ccm.r43</file>
             <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\cipher\aes_hw.r43</file>
             <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Command_Interpreter\BSL430_Command_Interpreter.r43</file>
+            <file>$PROJ_DIR$\FR5969_Crypto\Obj\CryptoBSL\Crypto\utils\utils.r43</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 12</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 17</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 9</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 15</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 14</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 10</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes_hw.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 16</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
@@ -97,11 +34,74 @@
             </outputs>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 15</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
                     <file> 11</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 3</file>
                 </tool>
             </outputs>
         </file>
@@ -121,190 +121,78 @@
     <configuration>
         <name>FR5994_Crypto</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_MassErase.s43</file>
-            <file>$PROJ_DIR$\CONFIG\lnk430_FRAM_RAM_1C00-1FFF.xcl</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Exe\cryptobsl.txt</file>
             <file>$PROJ_DIR$\FR5994_Crypto\Exe\cryptobsl.ulp</file>
             <file>$PROJ_DIR$\FR5994_Crypto\Exe\cryptobsl.d43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\API\BSL430_API_MassErase.r43</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430fr5994.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
             <file>$PROJ_DIR$\FR5994_Crypto\Obj\MSP430FR59xx_69xx\ipe.r43</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto_Config.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mode\aes_ccm.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\assert.h</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Command_Interpreter\BSL430_Command_Interpreter.r43</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\cipher\aes_hw.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\API\BSL430_API_FRAM_CRYPTO.r43</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\utils\utils.r43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mac\cbc_mac.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mode\ctr.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\legacy.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.h</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\BSL430_Crypto.r43</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\List\cryptobsl.map</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.r43</file>
+            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\API\BSL430_API_MassErase.r43</file>
             <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\BSL430_PI.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.h</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes_hw.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.h</file>
             <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes_hw.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.h</file>
             <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\utils\utils.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\cipher\aes.h</file>
             <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto.c</file>
-            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Definitions.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</file>
+            <file>$PROJ_DIR$\CONFIG\lnk430_FRAM_RAM_1C00-1FFF.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\BSL430_Crypto_Config.h</file>
             <file>$PROJ_DIR$\..\..\Src\.symlink</file>
             <file>$PROJ_DIR$\..\..\Src\BSL_Device_File.h</file>
             <file>$PROJ_DIR$\..\..\Src\ipe.s43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Exe\cryptobsl.txt</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430fr5994.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
-            <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\assert.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\legacy.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.h</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\utils\utils.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\BSL430_Crypto.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\API\BSL430_API_FRAM_CRYPTO.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mac\cbc_mac.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mode\ctr.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\cipher\aes_hw.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Crypto\mode\aes_ccm.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\Obj\CryptoBSL\Command_Interpreter\BSL430_Command_Interpreter.r43</file>
-            <file>$PROJ_DIR$\FR5994_Crypto\List\cryptobsl.map</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_MassErase.s43</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Definitions.h</file>
+            <file>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API.h</file>
         </outputs>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 51</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 27 30 32 34 35 44 0 36 46 41 37 47 43 38 31 25 16 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_MassErase.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 6</file>
-                </tool>
-            </outputs>
-        </file>
         <file>
             <name>$PROJ_DIR$\FR5994_Crypto\Exe\cryptobsl.d43</name>
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 29 57</file>
+                    <file> 0 30</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 3 55 54 51 6 56 49 50 52 53 7 48 58</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 5 29 57</file>
-                </tool>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 4</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 56</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 12 25 16 36 46 41 37 47 43 38 31 0 17 27 30 32 34 35 44 10 45 42 39</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 52</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 33 46 41 37 47 43 38 31 42 10 19 36 22 13</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 50</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 27 30 32 34 35 44 17 36 46 41 37 47 43 38 31 12 25 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 55</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 33 46 41 37 47 43 38 31 42 10 19 36 18 21 22 13</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 53</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 33 46 41 37 47 43 38 31 42 10 19 36 21 13</file>
+                    <file> 49 14 17 19 32 16 29 31 22 24 6 20 21</file>
                 </tool>
             </inputs>
         </file>
@@ -313,13 +201,28 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 54</file>
+                    <file> 17</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 30 32 34 35 44 10 13 36 46 41 37 47 43 38 31</file>
+                    <file> 9 4 3 8 27 50 45 23 10 11 26 28 12 13 7</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mac\cbc_mac.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5 10 11 26 28 12 13 7 25 50 42 23 34 45</file>
                 </tool>
             </inputs>
         </file>
@@ -328,13 +231,28 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 48</file>
+                    <file> 20</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 19 36 46 41 37 47 43 38 31 10</file>
+                    <file> 42 23 10 11 26 28 12 13 7 50</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\ctr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5 10 11 26 28 12 13 7 25 50 42 23 40 45</file>
                 </tool>
             </inputs>
         </file>
@@ -343,13 +261,43 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 49</file>
+                    <file> 29</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 30 32 34 35 44 25 10 16 36 46 41 37 47 43 38 31 0 13 18 22</file>
+                    <file> 9 4 3 8 27 57 50 43 23 10 11 26 28 12 13 7 58 45 39 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Crypto\mode\aes_ccm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5 10 11 26 28 12 13 7 25 50 42 23 39 40 34 45</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Peripheral_Interface\eUSCI_UART_I2C\BSL430_PI_eUSCI_UART_I2C.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 52 9 4 3 8 27 33 23 10 11 26 28 12 13 7 36 57 15</file>
                 </tool>
             </inputs>
         </file>
@@ -358,7 +306,59 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 7</file>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_MassErase.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_Command_Interpreter\BSL430_Command_Interpreter.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 16</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 36 57 43 23 10 11 26 28 12 13 7 58 33 52 9 4 3 8 27 50 18 25 35</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\CryptoBSL\BSL430_API\BSL430_API_FRAM_CRYPTO.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 52 9 4 3 8 27 58 23 10 11 26 28 12 13 7 57 43 15</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 2 0 30</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 1</file>
                 </tool>
             </outputs>
         </file>

@@ -263,5 +263,5 @@ void __attribute__ ((interrupt(PORT1_VECTOR))) Port_1 (void)
     P1IFG &= ~BIT3;                           // Clear P1.1 IFG
     __disable_interrupt();
     // Jump to CryptoBSL
-    ((void (*)())0xF37C)();	// Jump to CryptoBSL
+    ((void (*)())0xFF08)(0xC0DE);	// Jump to CryptoBSL
 }

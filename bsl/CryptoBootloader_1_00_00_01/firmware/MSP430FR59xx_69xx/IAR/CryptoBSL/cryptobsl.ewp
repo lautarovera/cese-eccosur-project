@@ -3580,7 +3580,7 @@
                 </option>
                 <option>
                     <name>GESupportIpe</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GAssertIpe</name>
@@ -4107,7 +4107,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>160</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>

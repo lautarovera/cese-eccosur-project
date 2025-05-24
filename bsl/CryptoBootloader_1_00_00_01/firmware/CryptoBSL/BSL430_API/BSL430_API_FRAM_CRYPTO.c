@@ -136,7 +136,7 @@ extern __persistent volatile uint8_t BSL_new_update_started;
 // Local Function prototypes
 //
 static int8_t BSL430_entrySeq(void);
-int8_t BSL430_invoke(void);
+static int8_t BSL430_invoke(void);
 static void MPU_SetSAM(uint16_t SAM_Val, uint8_t lock);
 static int8_t MPU_WriteByteToMem(uint32_t addr, uint8_t value);
 static int8_t MPU_GetByteFromMem(uint32_t addr, uint8_t *value);
@@ -591,7 +591,7 @@ static int8_t BSL430_entrySeq(void)
 *Returns:     SUCCESSFUL_OPERATION  BSL was invoked
 *             0x05                  Device should execute application
 *******************************************************************************/
-int8_t BSL430_invoke(void)
+static int8_t BSL430_invoke(void)
 {
     // Check if we can jump to application
     if ( (BSL_App_Executed != APPLICATION_EXECUTED)  || // If application didn't execute previously

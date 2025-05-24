@@ -3540,7 +3540,7 @@
                 </option>
                 <option>
                     <name>GEnableMpu</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GESupportMpu</name>
@@ -3580,7 +3580,7 @@
                 </option>
                 <option>
                     <name>GESupportIpe</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GAssertIpe</name>
@@ -4107,7 +4107,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
+                <hasPrio>160</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
